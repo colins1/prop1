@@ -3,13 +3,13 @@ import Star from './component/Star';
 
 
 function Stars({ count }){
-    let key = {};
+    let components = [];
     for(let i = 0; i < count; i++) {
-        key.push(i);
+        components.push(<Star counts={i} />)
     }
 
     return (
-        <ul className="card-body-stars u-clearfix">{count < 1 || count > 5 ? <p>Не оценен</p> : {key.map( counts => <Star counts={counts} />)}}</ul>
+        <ul className="card-body-stars u-clearfix">{count < 1 || count > 5 ? <p>Не оценен</p> : {components}}</ul>
     )
     
 }
